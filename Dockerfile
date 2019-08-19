@@ -17,8 +17,8 @@ RUN apt-get install git -yq
 RUN apt-get install build-essential libssl-dev -yq
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
-RUN source ~/.bashrc
-RUN source ~/.profile
+CMD source ~/.bashrc
+CMD source ~/.profile
 RUN node -v
 RUN npm -v
 RUN nvm -v
