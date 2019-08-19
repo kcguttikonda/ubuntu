@@ -10,35 +10,17 @@ ENV CHURROS_ENV="snapshot"
 ENV DISPLAY=:99
 
 
-RUN apt-get update &&\
-    apt-get install curl -yq \
-    ssh -yq \
-    git -yq \
-    build-essential libssl-dev -yq &&\
-RUN \
-  apt-get update && \
-# Install Python 3 stuffs
-  apt-get install -y curl && \
-  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-  curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash && \ 
-# Install stuffs to support UI browser testing
-  apt-get install -yq \
-  install build-essential libssl-dev -y \
-  nodejs \
-  ssh \
-  git \
-  git-core  \
-  xvfb  \
-  xsel  \
-  unzip  \
-  libgconf2-4 \
-  libncurses5 \
-  libxml2-dev \
-  libxslt-dev \
-  libz-dev \
-  wget \
-  fonts-liberation \
-  libappindicator3-1 \
-  xclip && \
+RUN apt-get update
+RUN apt-get install curl -yq
+RUN ssh -yq
+RUN git -yq
+RUN build-essential libssl-dev -yq
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+RUN source ~/.bashrc
+RUN source ~/.profile
+RUN node -v
+RUN npm -v
+RUN nvm -v
 # Define default command.
 ENTRYPOINT ["bash"]
