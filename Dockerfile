@@ -19,21 +19,19 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 CMD source ~/.bashrc
 RUN apt-get install nodejs -yq
-RUN apt-get install firefox
-RUN apt-get install chromium-browser
-RUN apt-get install xvfb
-RUN apt-get install xsel
-RUN apt-get install unzip
-RUN apt-get install libgconf2-4
-RUN apt-get install libncurses5
-RUN apt-get install libxml2-dev
-RUN apt-get install libxslt-dev
-RUN apt-get install libz-dev
-RUN apt-get install fonts-liberation
-RUN apt-get install libappindicator3-1
-RUN apt-get install xclip
-
-
+RUN apt-get install firefox -yq
+RUN apt-get install chromium-browser -yq
+RUN apt-get install xvfb -yq
+RUN apt-get install xsel -yq
+RUN apt-get install unzip -yq
+RUN apt-get install libgconf2-4 -yq
+RUN apt-get install libncurses5 -yq
+RUN apt-get install libxml2-dev -yq
+RUN apt-get install libxslt-dev -yq
+RUN apt-get install libz-dev -yq
+RUN apt-get install fonts-liberation -yq
+RUN apt-get install libappindicator3-1 -yq
+RUN apt-get install xclip -yq
 RUN npm -v
 CMD nvm -v
 # Define default command.
