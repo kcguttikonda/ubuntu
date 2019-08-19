@@ -32,6 +32,8 @@ RUN apt-get install libz-dev -yq
 RUN apt-get install fonts-liberation -yq
 RUN apt-get install libappindicator3-1 -yq
 RUN apt-get install xclip -yq
+RUN nvm install 8.10.0
+RUN nvm use 8.10.0
 RUN npm -v
 CMD nvm -v
 # Define default command.
