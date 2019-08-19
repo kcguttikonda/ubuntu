@@ -16,6 +16,7 @@ RUN apt-get install ssh -yq
 RUN apt-get install git -yq
 RUN apt-get install build-essential libssl-dev -yq
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install nodejs
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 CMD source ~/.bashrc
 CMD source ~/.profile
