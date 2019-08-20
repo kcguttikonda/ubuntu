@@ -1,12 +1,6 @@
 FROM ubuntu:xenial-20190720
 MAINTAINER developer@cloud-elements.com
-ENV USER=root
-ENV CHURROS_TEMPLATE="/qaAutomation/sauce.json"
-ENV CHURROS_USER="claude.elements.qa+circleci@gmail.com"
-ENV CHURROS_URL="snapshot.cloud-elements.com"
-ENV CHURROS_PASSWORD="Cl0ud3l3m3nts!"
-ENV CHURROS_ENV="snapshot"
-ENV DISPLAY=0:0
+ENV DISPLAY=:99
 RUN apt-get update
 RUN apt-get install curl -yq
 RUN apt-get install ssh -yq
@@ -32,5 +26,17 @@ RUN echo $NVM_DIR
 RUN echo $PATH
 RUN npm -v
 CMD nvm -v
+RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz" -O /tmp/geckodriver.tgz \
+    && tar zxf /tmp/geckodriver.tgz -C /usr/bin/ \
+    && rm /tmp/geckodriver.tgz
+
+# chromeDriver v2.45
+RUN wget -q "https://chromedriver.storage.googleapis.com/76.0.3809.68/chromedriver_linux64.zip" -O /tmp/chromedriver.zip \
+    && unzip /tmp/chromedriver.zip -d /usr/bin/ \
+    && rm /tmp/chromedriver.zip
+
+# chrome
+RUN wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" \
+    && dpkg -i google-chrome-stable_current_amd64.deb
 # Define default command.
 ENTRYPOINT /bin/bash
