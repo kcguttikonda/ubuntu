@@ -1,6 +1,5 @@
 FROM ubuntu:xenial-20190720
 MAINTAINER developer@cloud-elements.com
-
 ENV USER=root
 ENV CHURROS_TEMPLATE="/qaAutomation/sauce.json"
 ENV CHURROS_USER="claude.elements.qa+circleci@gmail.com"
@@ -8,8 +7,6 @@ ENV CHURROS_URL="snapshot.cloud-elements.com"
 ENV CHURROS_PASSWORD="Cl0ud3l3m3nts!"
 ENV CHURROS_ENV="snapshot"
 ENV DISPLAY=:99
-
-
 RUN apt-get update
 RUN apt-get install curl -yq
 RUN apt-get install ssh -yq
@@ -32,8 +29,6 @@ RUN apt-get install libz-dev -yq
 RUN apt-get install fonts-liberation -yq
 RUN apt-get install libappindicator3-1 -yq
 RUN apt-get install xclip -yq
-RUN nvm install 8.10.0
-RUN nvm use 8.10.0
 RUN npm -v
 CMD nvm -v
 # Define default command.
