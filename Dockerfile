@@ -30,6 +30,7 @@ RUN apt-get install fonts-liberation -yq
 RUN apt-get install libappindicator3-1 -yq
 RUN apt-get install xclip -yq
 RUN echo $NVM_DIR
+RUN echo $PATH
 RUN npm -v
 CMD nvm -v
 # Define default command.
