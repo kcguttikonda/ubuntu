@@ -38,7 +38,6 @@ RUN wget -q "https://chromedriver.storage.googleapis.com/76.0.3809.68/chromedriv
     && rm /tmp/chromedriver.zip
 
 # chrome
-RUN wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" \
-    && dpkg -i google-chrome-stable_current_amd64.deb
-# Define default command.
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 ENTRYPOINT /bin/bash
