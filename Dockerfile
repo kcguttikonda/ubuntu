@@ -1,4 +1,4 @@
-FROM ubuntu:xenial-20190720
+FROM ubuntu:latest
 MAINTAINER developer@cloud-elements.com
 ENV DISPLAY=:99
 RUN apt-get update
