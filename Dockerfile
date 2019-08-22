@@ -12,8 +12,10 @@ RUN apt-get install curl -yq
 RUN apt-get install ssh -yq
 RUN apt-get install git -yq
 RUN apt-get install build-essential libssl-dev -yq
-RUN apt update && apt install nodejs -yq && apt install npm -yq && npm --version
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+RUN nvm install 8.10.0 -yq
+RUN nvm use 8.10.0
+RUN nvm --version && npm --version && node --version
 CMD source ~/.bashrc
 RUN apt-get install nodejs -yq
 RUN apt-get install firefox -yq
