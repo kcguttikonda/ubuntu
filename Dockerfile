@@ -12,7 +12,6 @@ RUN apt-get install curl -yq
 RUN apt-get install ssh -yq
 RUN apt-get install git -yq
 RUN apt-get install build-essential libssl-dev -yq
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 CMD source ~/.bashrc
 RUN apt-get install nodejs -yq
@@ -30,8 +29,6 @@ RUN apt-get install libxss1 -yq
 RUN apt-get install xclip -yq
 RUN echo $NVM_DIR
 RUN echo $PATH
-RUN npm -v
-CMD nvm -v
 RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz" -O /tmp/geckodriver.tgz \
     && tar zxf /tmp/geckodriver.tgz -C /usr/bin/ \
     && rm /tmp/geckodriver.tgz
