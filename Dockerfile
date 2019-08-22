@@ -1,4 +1,4 @@
-FROM ubuntu:xenial-20190720
+FROM  ubuntu:bionic-20190807
 MAINTAINER developer@cloud-elements.com
 ENV USER=root
 ENV CHURROS_TEMPLATE="/qaAutomation/sauce.json"
