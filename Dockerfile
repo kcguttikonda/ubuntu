@@ -27,7 +27,6 @@ RUN apt-get install libz-dev -yq
 RUN apt-get install fonts-liberation -yq
 RUN apt-get install libappindicator3-1 -yq
 RUN apt-get install libxss1 -yq
-RUN apt-get install libcurl3 -yq
 RUN apt-get install xclip -yq
 RUN echo $NVM_DIR
 RUN echo $PATH
