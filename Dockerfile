@@ -20,14 +20,13 @@ RUN apt-get install firefox -yq
 RUN apt-get install xvfb -yq
 RUN apt-get install xsel -yq
 RUN apt-get install unzip -yq
-RUN apt-get install libgconf2-4 -yq
 RUN apt-get install libncurses5 -yq
 RUN apt-get install libxml2-dev -yq
 RUN apt-get install libxslt-dev -yq
 RUN apt-get install libz-dev -yq
 RUN apt-get install fonts-liberation -yq
 RUN apt-get install libappindicator3-1 -yq
-RUN apt-get install libgconf2-4 libnss3-1d libxss1 -yq
+RUN apt-get install libnss3-1d libxss1 -yq
 RUN apt-get install libcurl3 -yq
 RUN apt-get install xclip -yq
 RUN echo $NVM_DIR
