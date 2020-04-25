@@ -1,9 +1,6 @@
 FROM  ubuntu:18.04
 MAINTAINER developer@cloud-elements.com
 ENV USER=root
-ENV CHURROS_USER="churros@churros.com"
-ENV CHURROS_URL="snapshot.cloud-elements.com"
-ENV CHURROS_PASSWORD="elements1"
 ENV CHURROS_ENV="snapshot"
 ENV DISPLAY=:99
 RUN apt-get update
