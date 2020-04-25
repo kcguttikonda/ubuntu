@@ -1,7 +1,5 @@
 FROM  ubuntu:18.04
-MAINTAINER developer@cloud-elements.com
 ENV USER=root
-ENV CHURROS_ENV="snapshot"
 ENV DISPLAY=:99
 RUN apt-get update
 RUN apt-get install curl -yq
